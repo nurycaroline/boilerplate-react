@@ -1,7 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-function Header() {
+// actions
+import { setUser } from 'javascripts/store/actions/user';
+
+function Header(props) {
+  console.log(`header`, props);
+
+  function btnSetUser() {
+    props.dispatch(
+      setUser({
+        logged: true,
+        name: 'Gerson Lima',
+        token: 'asd98f7as9d87f89asd89f7a98s7df7a'
+      })
+    );
+  }
+
   return (
     <header className="header">
       <div className="header-wrapper">
@@ -25,9 +41,17 @@ function Header() {
             </li>
           </ul>
         </nav>
+
+        <button onClick={btnSetUser}>setUser</button>
       </div>
     </header>
   );
 }
 
-export default Header;
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  };
+};
+
+export default connect(mapStateToProps)(Header);
