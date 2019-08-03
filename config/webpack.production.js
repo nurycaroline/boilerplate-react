@@ -2,7 +2,7 @@ const { resolve } = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -46,6 +46,9 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    minimizer: [ new TerserPlugin() ]
+  },
   plugins: [
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
@@ -55,7 +58,6 @@ module.exports = {
       filename: 'style.css',
       allChunks: true
     }),
-    new UglifyJsPlugin(),
     new HtmlWebpackPlugin({
       template: '../src/index.html',
       filename: 'index.html'
