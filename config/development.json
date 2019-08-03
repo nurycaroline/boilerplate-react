@@ -1,5 +1,3 @@
 {
-  "painelUrl": "https://www.ultraacai.com",
-  "painelThemeUrl": "https://www.ultraacai.com/wp-content/themes/ultraacai",
-  "apiUrl": "https://www.ultraacai.com/wp-json/api"
+  "apiUrl": "http://development.localhost/api"
 }
