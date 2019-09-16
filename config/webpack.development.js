@@ -12,6 +12,9 @@ module.exports = {
   mode: 'development',
   devtool: 'cheap-source-map',
   devServer: {
+    clientLogLevel: 'warning',
+    stats: 'minimal',
+    open: true,
     hot: true,
     host: '0.0.0.0',
     port: 8080,

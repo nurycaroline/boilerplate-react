@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 
-import 'whatwg-fetch';
+import '../../config/ReactotronConfig';
+
 import 'babel-polyfill';
 import 'promise-polyfill/src/polyfill';
 import 'styles/style';
@@ -12,7 +13,7 @@ import 'styles/style';
 import Main from 'javascripts/layouts/main';
 
 // store
-import configureStore from 'javascripts/store/config';
+import configureStore from 'javascripts/store';
 
 const store = configureStore();
 

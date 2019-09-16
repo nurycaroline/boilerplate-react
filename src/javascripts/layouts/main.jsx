@@ -1,10 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-// components
 import Header from 'javascripts/components/header';
-
-// helpers
 import Routes from 'javascripts/helpers/routes';
 
 function Main() {

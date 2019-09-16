@@ -24,7 +24,8 @@ module.exports = {
       'react-dom': '@hot-loader/react-dom',
       images: resolve(__dirname, '../src/images'),
       styles: resolve(__dirname, '../src/styles'),
-      javascripts: resolve(__dirname, '../src/javascripts')
+      javascripts: resolve(__dirname, '../src/javascripts'),
+      store: resolve(__dirname, '../src/javascripts/store')
     }
   }
 };

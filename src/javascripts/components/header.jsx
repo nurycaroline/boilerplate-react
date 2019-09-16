@@ -1,21 +1,18 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-// actions
-import { setUser } from 'javascripts/store/actions/user';
+import * as UserActions from 'store/modules/user/actions';
 
-function Header(props) {
-  console.log(`header`, props);
+export default function Header() {
+  const dispatch = useDispatch();
 
   function btnSetUser() {
-    props.dispatch(
-      setUser({
-        logged: true,
-        name: 'Gerson Lima',
-        token: 'asd98f7as9d87f89asd89f7a98s7df7a'
-      })
-    );
+    dispatch(UserActions.setUser({
+      logged: true,
+      name: 'Gerson Lima',
+      token: 'asd98f7as9d87f89asd89f7a98s7df7a'
+    }));
   }
 
   return (
@@ -41,17 +38,8 @@ function Header(props) {
             </li>
           </ul>
         </nav>
-
         <button onClick={btnSetUser}>setUser</button>
       </div>
     </header>
   );
 }
-
-const mapStateToProps = state => {
-  return {
-    user: state.user
-  };
-};
-
-export default connect(mapStateToProps)(Header);

@@ -1,23 +1,33 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import Api from '../services';
 
-function Home(props) {
-  const { user } = props;
+export default function Home() {
+  const user = useSelector(state => state.user);
+  const [ members, setMembers ] = useState([]);
+
+  useEffect( () => {
+    async function loadMembers(){
+      const response = await Api.get(`/orgs/futurebrand/members`);
+      setMembers(response.data);
+    }
+    loadMembers();
+  }, []);
 
   return (
     <div className="page">
+      <br/>
       <p>Home Page</p>
       <div>
         {user.logged ? JSON.stringify(user) : <p>Usuário não logado</p>}
       </div>
+      <br/>
+      <strong>Membros</strong>
+      <ul>
+        {
+          members.map(m => <li key={m.id}>{m.login}</li>)
+        }
+      </ul>
     </div>
   );
 }
-
-const mapStateToProps = state => {
-  return {
-    user: state.user
-  };
-};
-
-export default connect(mapStateToProps)(Home);
