@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 
-import '../../config/ReactotronConfig';
+import '../../config/reactotron';
 
 import 'babel-polyfill';
 import 'promise-polyfill/src/polyfill';

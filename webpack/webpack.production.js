@@ -38,21 +38,21 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: [ 'file-loader' ]
+        use: ['file-loader']
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [ 'file-loader' ]
+        use: ['file-loader']
       }
     ]
   },
   optimization: {
-    minimizer: [ new TerserPlugin() ]
+    minimizer: [new TerserPlugin()]
   },
   plugins: [
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-      config: JSON.stringify(require(`./${process.env.NODE_ENV}.json`))
+      config: JSON.stringify(require(`../config/${process.env.NODE_ENV}.json`))
     }),
     new MiniCssExtractPlugin({
       filename: 'style.css',

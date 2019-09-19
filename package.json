@@ -7,8 +7,8 @@
     "node": ">10.13.0"
   },
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server --config config/webpack.config.js",
-    "build": "NODE_ENV=production webpack --config config/webpack.config.js",
+    "dev": "NODE_ENV=development webpack-dev-server --config webpack/webpack.config.js",
+    "build": "NODE_ENV=production webpack --config webpack/webpack.config.js",
     "lint-staged": "lint-staged"
   },
   "author": "",
