@@ -1,7 +1,10 @@
-import axios from 'axios';
+const Api = {
+  async loadMembers(){
+    const result = await fetch('https://api.github.com/orgs/futurebrand/members')
+      .then( response => response.json())
+      .then(data => data)
+    return result
+  }
+}
 
-const api = axios.create({
-  baseURL: 'https://api.github.com/',
-});
-
-export default api;
+export default Api;

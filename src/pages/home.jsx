@@ -8,8 +8,8 @@ export default function Home() {
 
   useEffect( () => {
     async function loadMembers(){
-      const response = await Api.get(`/orgs/futurebrand/members`);
-      setMembers(response.data);
+      const membersList = await Api.loadMembers();
+      setMembers(membersList);
     }
     loadMembers();
   }, []);
