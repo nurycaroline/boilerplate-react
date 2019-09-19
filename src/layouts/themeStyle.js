@@ -1,4 +1,5 @@
-export default {
+const theme = {
+  /* Variables */
   font: 'Arial',
   colors: {
     white: '#fff',
@@ -16,5 +17,21 @@ export default {
     'desktop-medium': '1440px',
     'desktop-big': '1680px',
     'desktop-large': '1920px'
-  }
+  },
+  
+  /* Mixins */
+  hide: `
+    opacity: 0;
+    visibility: hidden;
+  `,
+  show: `
+    opacity: 1;
+    visibility: visible;
+  `,
+
+  /* Functions */
+  color: (color) => `${theme.colors[color]}`,
+  mqMap: (mqValue) => `${theme.mq[mqValue]}`,
 }
+
+export default theme;

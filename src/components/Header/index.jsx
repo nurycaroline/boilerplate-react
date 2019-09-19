@@ -19,21 +19,21 @@ export default function Header() {
   }
 
   return (
-    <header className="header">
+    <header>
       <Wrapper>
         <Logo to="/">
           <img src={ILogo} alt="Logo Future Brand"/>
         </Logo>
 
-        <nav className="header-nav">
-          <ul className="header-nav-items">
-            <li className="header-nav-item">
-              <Link to="/" className="header-nav__btn">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">
                 Página Inicial
               </Link>
             </li>
-            <li className="header-nav-item">
-              <Link to="/contato" className="header-nav__btn">
+            <li>
+              <Link to="/contato">
                 Contato
               </Link>
             </li>

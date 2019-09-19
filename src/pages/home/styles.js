@@ -8,6 +8,6 @@ export const List = styled.ul`
   list-style: none;
 
   li {
-    color: ${props => props.theme.colors.black}
+    color: ${({ theme }) => theme.color('black')}
   }
 `;

@@ -29,7 +29,7 @@ function Main() {
         <>
           <GlobalStyle />
           <Header />
-          <div className="wrapper">{getRoutes()}</div>
+          <div>{getRoutes()}</div>
         </>
       </ThemeProvider>
     </BrowserRouter>
