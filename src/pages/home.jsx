@@ -8,7 +8,7 @@ export default function Home() {
 
   useEffect( () => {
     async function loadMembers(){
-      const membersList = await Api.loadMembers();
+      const membersList = await Api.Usuario.loadMembers();
       setMembers(membersList);
     }
     loadMembers();
