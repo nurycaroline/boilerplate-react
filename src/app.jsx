@@ -3,17 +3,17 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 
-import '../../config/reactotron';
+import '../config/reactotron';
 
 import 'babel-polyfill';
 import 'promise-polyfill/src/polyfill';
 import 'styles/style';
 
 // layouts
-import Main from 'javascripts/layouts/main';
+import Main from 'layouts/main';
 
 // store
-import configureStore from 'javascripts/store';
+import configureStore from 'store';
 
 const store = configureStore();
 

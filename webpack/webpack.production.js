@@ -8,7 +8,7 @@ module.exports = {
   entry: [
     'whatwg-fetch',
     'babel-polyfill',
-    resolve(__dirname, '../src/javascripts/app.jsx')
+    resolve(__dirname, '../src/app.jsx')
   ],
   mode: 'production',
   module: {
@@ -38,16 +38,16 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
+        use: [ 'file-loader' ]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ['file-loader']
+        use: [ 'file-loader' ]
       }
     ]
   },
   optimization: {
-    minimizer: [new TerserPlugin()]
+    minimizer: [ new TerserPlugin() ]
   },
   plugins: [
     new webpack.DefinePlugin({

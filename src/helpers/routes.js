@@ -1,5 +1,5 @@
-import Home from 'javascripts/pages/home';
-import Contact from 'javascripts/pages/contact';
+import Home from 'pages/home';
+import Contact from 'pages/contact';
 
 const Routes = [
   {

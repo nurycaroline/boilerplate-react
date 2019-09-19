@@ -7,7 +7,7 @@ module.exports = {
     'whatwg-fetch',
     'babel-polyfill',
     'react-hot-loader/patch',
-    resolve(__dirname, '../src/javascripts/app.jsx')
+    resolve(__dirname, '../src/app.jsx')
   ],
   mode: 'development',
   devtool: 'cheap-source-map',
@@ -60,11 +60,11 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
+        use: [ 'file-loader' ]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ['file-loader']
+        use: [ 'file-loader' ]
       }
     ]
   },

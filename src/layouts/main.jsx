@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import Header from 'javascripts/components/header';
-import Routes from 'javascripts/helpers/routes';
+import Header from 'components/header';
+import Routes from 'helpers/routes';
 
 function Main() {
   function getRoutes() {

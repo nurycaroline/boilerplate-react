@@ -22,10 +22,15 @@ module.exports = {
     ],
     alias: {
       'react-dom': '@hot-loader/react-dom',
-      images: resolve(__dirname, '../src/images'),
       styles: resolve(__dirname, '../src/styles'),
-      javascripts: resolve(__dirname, '../src/javascripts'),
-      store: resolve(__dirname, '../src/javascripts/store')
+      
+      assets: resolve(__dirname, '../src/assets'),
+      components: resolve(__dirname, '../src/components'),
+      helpers: resolve(__dirname, '../src/helpers'),
+      layouts: resolve(__dirname, '../src/layouts'),
+      pages: resolve(__dirname, '../src/pages'),
+      services: resolve(__dirname, '../src/services'),
+      store: resolve(__dirname, '../src/store')
     }
   }
 };
