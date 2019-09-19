@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 
 import * as UserActions from 'store/modules/user/actions';
 
+import ILogo from '../assets/images/futurebrand-logo-black.svg';
+import { Wrapper, Logo } from './styles';
+
 export default function Header() {
   const dispatch = useDispatch();
 
@@ -17,12 +20,10 @@ export default function Header() {
 
   return (
     <header className="header">
-      <div className="header-wrapper">
-        <h1 className="header-logo">
-          <Link to="/" className="header-logo__btn">
-            Logo
-          </Link>
-        </h1>
+      <Wrapper>
+        <Logo to="/">
+          <img src={ILogo} alt="Logo Future Brand"/>
+        </Logo>
 
         <nav className="header-nav">
           <ul className="header-nav-items">
@@ -38,8 +39,8 @@ export default function Header() {
             </li>
           </ul>
         </nav>
-        <button onClick={btnSetUser}>setUser</button>
-      </div>
+        <button onClick={btnSetUser}>Set User</button>
+      </Wrapper>
     </header>
   );
 }

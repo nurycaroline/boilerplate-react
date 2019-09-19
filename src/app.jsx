@@ -2,18 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
+import Main from 'layouts/main';
+import configureStore from 'store';
 
 import '../config/reactotron';
-
 import 'babel-polyfill';
 import 'promise-polyfill/src/polyfill';
-import 'styles/style';
-
-// layouts
-import Main from 'layouts/main';
-
-// store
-import configureStore from 'store';
 
 const store = configureStore();
 

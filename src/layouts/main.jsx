@@ -1,8 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { ThemeProvider } from "styled-components";
 
 import Header from 'components/header';
 import Routes from 'helpers/routes';
+
+import GlobalStyle from './globalStyle';
+import ThemeStyle from './themeStyle';
+
 
 function Main() {
   function getRoutes() {
@@ -20,10 +25,13 @@ function Main() {
 
   return (
     <BrowserRouter>
-      <>
-        <Header />
-        <div className="wrapper">{getRoutes()}</div>
-      </>
+      <ThemeProvider theme={ThemeStyle}>
+        <>
+          <GlobalStyle />
+          <Header />
+          <div className="wrapper">{getRoutes()}</div>
+        </>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }

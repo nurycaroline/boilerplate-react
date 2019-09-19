@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import Api from '../services';
+import Api from '../../services';
+
+import { Container, StatusUser, List } from './styles';
 
 export default function Home() {
   const user = useSelector(state => state.user);
@@ -15,19 +17,22 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="page">
+    <Container>
+      <h1>Página Inicial</h1>
       <br/>
-      <p>Home Page</p>
-      <div>
-        {user.logged ? JSON.stringify(user) : <p>Usuário não logado</p>}
-      </div>
+
+      <StatusUser logged={user.logged}>
+        <p>{user.logged ? JSON.stringify(user) : 'Usuário não logado'}</p>
+      </StatusUser>
+      
       <br/>
-      <strong>Membros</strong>
-      <ul>
+      
+      <h2>Membros</h2>
+      <List>
         {
           members.map(m => <li key={m.id}>{m.login}</li>)
         }
-      </ul>
-    </div>
+      </List>
+    </Container>
   );
 }
