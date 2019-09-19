@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import * as UserActions from 'store/modules/user/actions';
 
-import ILogo from '../assets/images/futurebrand-logo-black.svg';
+import ILogo from 'assets/images/futurebrand-logo-black.svg';
 import { Wrapper, Logo } from './styles';
 
 export default function Header() {
