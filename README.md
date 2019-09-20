@@ -2,12 +2,13 @@
 
 Project stack:
 
+- React
 - Redux
-- Rectotron
+- Styled Components
+- Reactotron
 - Fetch
 - Lint (Eslint, Prettier e Stylelint)
 - Precommit Lints
-- Styled Components
 - Visual Studio Code config like Chrome Debugger and Lint Integration
 
 ## What do you need?
@@ -44,3 +45,13 @@ Studio Code with the following plugins:
 Before running git commit, the rules of ESLint and Stylelint are executed. If
 there is an error or some non-default code of the site will generate an error
 and you will not be able to commit.
+
+
+## Git Flow 
+
+```
+  git flow init
+  git flow feature start header
+  git flow feature publish header
+  git flow feature finish header
+```

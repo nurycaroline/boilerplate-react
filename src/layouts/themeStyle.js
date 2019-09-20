@@ -40,8 +40,6 @@ const theme = {
       ${style}
     }
   `,
-  color: (color) => `${theme.colors[color]}`,
-  mqMap: (mqValue) => `${theme.mq[mqValue]}`,
 }
 
 export default theme;
