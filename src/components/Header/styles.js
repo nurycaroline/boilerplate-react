@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
-  background: ${({ theme }) => theme.color('grayLight')};
+  background: ${({ theme }) => theme.color('black')};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,6 +16,12 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Logo = styled(Link)`
+export const LogoDesktop = `
   max-width: 150px;
+`;
+
+export const Logo = styled(Link)`
+  max-width: 100px;
+
+  ${({ theme }) => theme.maxScreen('tablet', LogoDesktop)}
 `;
