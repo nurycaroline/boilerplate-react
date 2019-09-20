@@ -4,7 +4,7 @@ Project stack:
 
 - Lint (Eslint, Prettier e Stylelint)
 - Precommit Lints
-- Sass/Postcss
+- Styled Components
 - Visual Studio Code config like Chrome Debugger and Lint Integration
 
 ## What do you need?

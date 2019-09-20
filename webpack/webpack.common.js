@@ -12,7 +12,6 @@ module.exports = {
       '.js',
       '.jsx',
       '.json',
-      '.scss',
       '.css',
       '.png',
       '.jpg',
@@ -22,8 +21,6 @@ module.exports = {
     ],
     alias: {
       'react-dom': '@hot-loader/react-dom',
-      styles: resolve(__dirname, '../src/styles'),
-      
       assets: resolve(__dirname, '../src/assets'),
       components: resolve(__dirname, '../src/components'),
       helpers: resolve(__dirname, '../src/helpers'),

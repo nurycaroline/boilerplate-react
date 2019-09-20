@@ -1,6 +1,5 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -13,22 +12,6 @@ module.exports = {
   mode: 'production',
   module: {
     rules: [
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              modules: false
-            }
-          },
-          'sass-loader'
-        ]
-      },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
@@ -47,6 +30,15 @@ module.exports = {
     ]
   },
   optimization: {
+    // splitChunks: {
+    //   cacheGroups: {
+    //     commons: {
+    //       test: /[\\/]node_modules[\\/]/,
+    //       name: 'vendors',
+    //       chunks: 'all',
+    //     },
+    //   },
+    // },
     minimizer: [ new TerserPlugin() ]
   },
   plugins: [
@@ -54,13 +46,26 @@ module.exports = {
       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       config: JSON.stringify(require(`../config/${process.env.NODE_ENV}.json`))
     }),
-    new MiniCssExtractPlugin({
-      filename: 'style.css',
-      allChunks: true
-    }),
     new HtmlWebpackPlugin({
-      template: '../src/index.html',
-      filename: 'index.html'
+      template: '../public/index.html',
+      filename: 'index.html',
+      favicon: '../public/favicon-16x16.png',
+      title: 'Boilerplate - Future Brand',
+      meta: {
+        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+        'theme-color': '#FFF',
+        'og:site_name': 'Boilerplate - Future Brand',
+        'og:type': 'website',
+        'twitter:card': 'summary',
+      },
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+      }
     })
   ]
 };

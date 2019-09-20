@@ -28,30 +28,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
-        use: [
-          'style-loader',
-          { loader: 'css-loader?sourceMap' },
-          {
-            loader: 'postcss-loader',
-            options: {
-              config: {
-                path: resolve(__dirname, '../postcss.config.js')
-              }
-            }
-          },
-          {
-            loader: 'sass-loader?sourceMap',
-            options: {
-              includePaths: [
-                resolve(__dirname, '../src/styles'),
-                resolve(__dirname, '../node_modules')
-              ]
-            }
-          }
-        ]
-      },
-      {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
