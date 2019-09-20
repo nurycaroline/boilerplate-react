@@ -58,8 +58,25 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      template: '../src/index.html',
-      filename: 'index.html'
+      template: '../public/index.html',
+      filename: 'index.html',
+      favicon: '../public/favicon-16x16.png',
+      title: 'Boilerplate - Future Brand',
+      meta: {
+        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+        'theme-color': '#FFF',
+        'og:site_name': 'Boilerplate - Future Brand',
+        'og:type': 'website',
+        'twitter:card': 'summary',
+      },
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+      }
     })
   ]
 };
