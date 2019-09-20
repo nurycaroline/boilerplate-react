@@ -19,10 +19,11 @@ Project stack:
 
 Here are the commands that are used in the project:
 
-| Command    | Description                                    |
-| ---------- | ---------------------------------------------- |
-| yarn dev   | Run the project in development with hot loader |
-| yarn build | Build project                                  |
+| Command     | Description                                    |
+| ----------- | ---------------------------------------------- |
+| yarn dev    | Run the project in development with hot loader |
+| yarn build  | Build project                                  |
+| yarn server | Run build project in a production server       |
 
 ## Setup of your IDE
 
