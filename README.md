@@ -1,7 +1,10 @@
-# Boilerplate React
+# Boilerplate React Hooks
 
 Project stack:
 
+- Redux
+- Rectotron
+- Fetch
 - Lint (Eslint, Prettier e Stylelint)
 - Precommit Lints
 - Styled Components
